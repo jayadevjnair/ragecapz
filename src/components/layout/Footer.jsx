@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, MapPin, Phone, Facebook } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,10 +24,13 @@ export default function Footer() {
               Learn. Build. Innovate. Where ideas become electronic reality through hands-on learning and practical experimentation.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="https://www.instagram.com/ragecapz?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
+              <a href="https://www.instagram.com/ragecapz?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="Instagram">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="WhatsApp Us">
+              <a href="https://www.facebook.com/share/19hpiSkbPq/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="Facebook">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="WhatsApp">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
