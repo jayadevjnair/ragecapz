@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
-import { ArrowRight, Search, Code, Cpu, Wifi } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, Search, Code, Cpu, Wifi, X } from 'lucide-react';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
 
 const projects = [
@@ -34,6 +35,7 @@ export default function Projects() {
   });
 
   const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const filteredProjects = activeCategory === 'All' 
     ? projects 
@@ -99,7 +101,10 @@ export default function Projects() {
                 <h3 className="text-xl font-bold text-white mb-3">{project.title}</h3>
                 <p className="text-gray-400 text-sm mb-6 flex-grow">{project.desc}</p>
                 
-                <button className="flex items-center text-sm font-semibold text-white hover:text-primary transition-colors mt-auto group/btn w-max">
+                <button 
+                  onClick={() => setSelectedProject(project)}
+                  className="flex items-center text-sm font-semibold text-white hover:text-primary transition-colors mt-auto group/btn w-max"
+                >
                   View Details
                   <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
@@ -116,6 +121,66 @@ export default function Projects() {
         )}
 
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }} 
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl flex flex-col md:flex-row z-10"
+            >
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-primary text-white hover:text-black rounded-full transition-colors z-20"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="w-full md:w-1/2 min-h-[300px] md:min-h-full relative flex-shrink-0">
+                <img 
+                  src={selectedProject.img} 
+                  alt={selectedProject.title} 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-[#0a0a0a]" />
+              </div>
+
+              <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center">
+                <div className="inline-block px-3 py-1 mb-4 border border-primary/30 text-primary text-xs font-bold rounded-full w-max tracking-wide">
+                  {selectedProject.category}
+                </div>
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">{selectedProject.title}</h2>
+                <div className="flex items-center gap-2 text-primary font-mono text-sm mb-6">
+                  <Code className="w-4 h-4" /> {selectedProject.tech}
+                </div>
+                <p className="text-gray-300 mb-10 leading-relaxed text-lg">
+                  {selectedProject.desc}
+                </p>
+                
+                <div className="mt-auto pt-8 border-t border-white/10">
+                  <p className="text-gray-400 text-sm mb-4">Interested in building something similar?</p>
+                  <Link 
+                    to="/contact"
+                    onClick={() => window.scrollTo(0, 0)}
+                    className="btn-primary w-full justify-center text-center flex"
+                  >
+                    For Development Assistance, Contact Us
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
