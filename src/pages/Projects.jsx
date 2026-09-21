@@ -4,12 +4,19 @@ import { useState } from 'react';
 import useSEO from '../hooks/useSEO';
 
 const projects = [
-  { id: 1, title: 'Smart Home Automation', tech: 'ESP32 + Relay + IoT', category: 'IoT', img: '/smarthomeautomation.png', desc: 'Control home appliances globally via a custom web dashboard.' },
-  { id: 2, title: 'Obstacle Avoiding Robot', tech: 'Arduino + Ultrasonic + Motors', category: 'Robotics', img: '/obstacleavoidingrobot.png', desc: 'Autonomous robot that navigates around obstacles in real-time.' },
-  { id: 3, title: 'Weather Monitoring System', tech: 'ESP32 + Temp/Humidity + OLED', category: 'Sensors', img: '/weathermonitoringsystem.png', desc: 'Real-time local weather data collection and display.' },
-  { id: 4, title: 'Smart Agriculture System', tech: 'ESP32 + Soil Sensors + IoT', category: 'IoT', img: '/ChatGPT Image Sep 5, 2026, 12_15_33 AM.png', desc: 'Automated plant watering based on soil moisture levels.' },
-  { id: 5, title: 'Line Following Robot', tech: 'Arduino + IR Sensors + Motors', category: 'Robotics', img: '/linefollowingrobot.png', desc: 'Robot designed to precisely follow complex track paths.' },
-  { id: 6, title: 'RFID Attendance System', tech: 'ESP32 + RC522 + Google Sheets', category: 'Embedded', img: 'https://images.unsplash.com/photo-1555664424-778a1e5e1b48?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80', desc: 'Automated attendance logging using RFID cards and Wi-Fi.' },
+  { id: 1, title: 'Voice Based Appliance Control', tech: 'Arduino/ESP32 + Voice Module', category: 'IoT', img: '/WhatsApp Image 2026-09-21 at 3.12.39 PM.jpeg', desc: 'A smart control system for physically challenged individuals to control room appliances using voice commands.' },
+  { id: 2, title: 'Face Detection System', tech: 'ESP32-CAM + OV2640', category: 'IoT', img: '/ChatGPT Image Sep 21, 2026, 03_05_43 PM.png', desc: 'A smart system for high accuracy face detection with spatial correlation improvement in an IoT environment.' },
+  { id: 3, title: 'Railway Fault Notification', tech: 'ESP32 + Accelerometer', category: 'Sensors', img: '/ChatGPT Image Sep 21, 2026, 03_06_45 PM.png', desc: 'Real-time monitoring system that detects railway track faults and bridge damage to prevent accidents.' },
+  { id: 4, title: 'Automatic Human Seeker Robot', tech: 'ESP32 + Thermal Camera', category: 'Robotics', img: '/ChatGPT Image Sep 21, 2026, 03_07_52 PM.png', desc: 'An all-terrain robot equipped with a thermal camera to detect human body heat for disaster rescue operations.' },
+  { id: 5, title: 'Speech Recognition Locker', tech: 'ESP32 + Mic + OLED', category: 'Embedded', img: '/WhatsApp Image 2026-09-21 at 3.03.09 PM.jpeg', desc: 'A smart and secure locker system that uses voice authentication to grant access and protect valuables.' },
+  { id: 6, title: 'Electronic Check Post', tech: 'Microcontroller + ANPR + RFID', category: 'IoT', img: '/ChatGPT Image Sep 21, 2026, 03_03_05 PM.png', desc: 'An automated model that verifies vehicles using Automatic Number Plate Recognition and RFID.' },
+  { id: 7, title: 'ATM Card Loss Identification', tech: 'Arduino/ESP32 + RFID', category: 'Embedded', img: '/RFID ATM CARDLOSS.jpeg', desc: 'A security solution that prevents fraudulent ATM transactions by verifying RFID tags in real-time.' },
+  { id: 8, title: 'AI Assistive Navigation', tech: 'Raspberry Pi + Camera', category: 'Embedded', img: '/ChatGPT Image Sep 21, 2026, 02_52_14 PM.png', desc: 'An AI-powered smart cane that detects multiple objects and alerts visually impaired users instantly.' },
+  { id: 9, title: 'Object Detection & Alert', tech: 'AI Model + Vibration Motor', category: 'Sensors', img: '/obstacle avoidance for blind men.png', desc: 'A wearable assistive device that detects obstacles and provides vibration alerts for safe mobility.' },
+  { id: 10, title: 'V2V Communication Protocol', tech: 'DSRC/C-V2X + OBU', category: 'IoT', img: '/vehicle to vehicle communicatiion protocol.png', desc: 'A vehicle-to-vehicle communication protocol for cooperative collision warning to prevent accidents.' },
+  { id: 11, title: 'RFID Ignition Control', tech: 'Microcontroller + RFID Reader', category: 'Embedded', img: '/rfid vehicle project.png', desc: 'A keyless access system that allows only authorized users with a valid RFID tag to start a vehicle.' },
+  { id: 12, title: 'Robotic Exoskeleton', tech: 'ESP32 + EMG + IMU', category: 'Robotics', img: '/WhatsApp Image 2026-09-21 at 3.16.25 PM.jpeg', desc: 'An assistive exoskeleton frame designed to help in rehabilitation and support muscle strength.' },
+  { id: 13, title: 'Floor Cleaning Robot', tech: 'ESP32 + Motor Driver', category: 'Robotics', img: '/WhatsApp Image 2026-09-21 at 3.18.01 PM.jpeg', desc: 'A wireless floor cleaning robot for homes and offices that features sweeping, mopping, and water spraying.' }
 ];
 
 const categories = ['All', 'IoT', 'Robotics', 'Sensors', 'Embedded'];
