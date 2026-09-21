@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Cpu, Globe, Hash, MessageCircle, Share2, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,17 +24,11 @@ export default function Footer() {
               Learn. Build. Innovate. Where ideas become electronic reality through hands-on learning and practical experimentation.
             </p>
             <div className="flex gap-4 pt-2">
-              <a href="#" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
-                <Globe className="w-5 h-5" />
+              <a href="https://www.instagram.com/ragecapz?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
+                <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
-                <Hash className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
+              <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="WhatsApp Us">
                 <MessageCircle className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all">
-                <Share2 className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -75,6 +69,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />
                 <a href="tel:+918592010676" className="text-sm hover:text-primary transition-colors">+91 85920 10676</a>
+              </li>
+              <li className="flex items-center gap-3">
+                <MessageCircle className="w-5 h-5 text-primary shrink-0" />
+                <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">WhatsApp Us</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />
