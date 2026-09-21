@@ -127,34 +127,38 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-display font-bold text-white mb-8">Send an Enquiry</h3>
             
-            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+              <input type="hidden" name="access_key" value="9b38839c-a949-4b1b-859d-5669abb86554" />
+              <input type="hidden" name="subject" value="New Enquiry from RAGECAPZ Website" />
+              <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Name</label>
-                  <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="John Doe" />
+                  <input type="text" name="name" required className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Email</label>
-                  <input type="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="john@example.com" />
+                  <input type="email" name="email" required className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="john@example.com" />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Phone</label>
-                  <input type="tel" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="+1 (555) 000-0000" />
+                  <input type="tel" name="phone" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="+1 (555) 000-0000" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Organization / School (Optional)</label>
-                  <input type="text" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="School Name" />
+                  <input type="text" name="organization" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors" placeholder="School Name" />
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Interested Program</label>
-                  <select className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
-                    <option value="" disabled selected>Select a program</option>
+                  <select name="program" defaultValue="" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
+                    <option value="" disabled>Select a program</option>
                     <option value="hands-on">Hands-on Training</option>
                     <option value="idea-lab">Idea Lab</option>
                     <option value="internship">Internship</option>
@@ -167,8 +171,8 @@ export default function Contact() {
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2">Mode</label>
-                  <select className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
-                    <option value="" disabled selected>Select mode</option>
+                  <select name="mode" defaultValue="" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors appearance-none">
+                    <option value="" disabled>Select mode</option>
                     <option value="offline">Offline (At Lab)</option>
                     <option value="online">Online (Remote)</option>
                   </select>
@@ -177,7 +181,7 @@ export default function Contact() {
               
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
-                <textarea rows="4" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="How can we help you?"></textarea>
+                <textarea name="message" required rows="4" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="How can we help you?"></textarea>
               </div>
               
               <button type="submit" className="btn-primary w-full group flex items-center justify-center py-4">
