@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ZoomIn } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 const categories = ['All', 'Workshops', 'Idea Lab', 'Projects', 'School Programs', 'Internships', 'Summer Camps'];
 
@@ -28,6 +29,12 @@ const galleryItems = [
 ];
 
 export default function Gallery() {
+  useSEO({
+    title: 'Gallery',
+    description: 'A glimpse into the hands-on learning, workshops, and student innovations at RAGECAPZ.',
+    path: '/gallery',
+  });
+
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedImg, setSelectedImg] = useState(null);
 

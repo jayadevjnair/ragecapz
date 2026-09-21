@@ -12,6 +12,7 @@ import SummerCamps from './pages/SummerCamps';
 import Projects from './pages/Projects';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
@@ -29,8 +30,8 @@ function App() {
           <Route path="gallery" element={<Gallery />} />
           <Route path="contact" element={<Contact />} />
           
-          {/* Catch all route */}
-          <Route path="*" element={<div className="p-20 text-center"><h1 className="text-4xl text-red-500 font-display">404 Not Found</h1></div>} />
+          {/* Catch all route for client-side 404 */}
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

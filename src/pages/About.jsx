@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import { Target, Lightbulb, Users, Zap } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 export default function About() {
+  useSEO({
+    title: 'About Us',
+    description: 'Learn about RAGECAPZ. Our mission is to make electronics education practical, accessible, and exciting for students through hands-on training.',
+    path: '/about',
+  });
+
   return (
     <div className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

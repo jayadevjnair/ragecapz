@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Sun, Code, Zap, Users, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const activities = [
   { title: 'Electronics Basics', icon: Zap, desc: 'Learn how electricity works using fun, safe components.' },
@@ -10,6 +11,12 @@ const activities = [
 ];
 
 export default function SummerCamps() {
+  useSEO({
+    title: 'Summer Tech Camp',
+    description: 'Join the RAGECAPZ Summer Tech Camp. Learn electronics, arduino coding, and build your first invention.',
+    path: '/summer-camps',
+  });
+
   return (
     <div className="py-24 bg-background relative overflow-hidden">
       <div className="absolute top-20 right-20 w-[400px] h-[400px] bg-yellow-500/10 rounded-full blur-[120px] pointer-events-none" />

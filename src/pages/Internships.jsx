@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Laptop, Building2, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const timeline = [
   "Choose Domain",
@@ -13,6 +14,12 @@ const timeline = [
 ];
 
 export default function Internships() {
+  useSEO({
+    title: 'Internships',
+    description: 'Gain real-world engineering experience with our online and offline internships. Focus on IoT, robotics, and software integration.',
+    path: '/internships',
+  });
+
   return (
     <div className="py-24 bg-background overflow-hidden relative">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />

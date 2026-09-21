@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { BookOpen, MapPin, Clock, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const courses = [
   { id: 1, title: 'Electronics Fundamentals', level: 'Beginner', duration: '4 Weeks', type: 'Offline / Online', desc: 'Learn the absolute basics of voltage, current, resistance and essential components.', projects: ['Basic Circuits', 'Breadboard Prototyping'] },
@@ -14,6 +15,12 @@ const courses = [
 ];
 
 export default function Programs() {
+  useSEO({
+    title: 'Our Programs & Courses',
+    description: 'Explore RAGECAPZ training programs in Electronics, Arduino, IoT, Robotics, and Microcontrollers for all skill levels.',
+    path: '/programs',
+  });
+
   return (
     <div className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Cpu, Activity, Layout, Wifi, Zap, Box } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const equipment = [
   { name: 'Microcontrollers', icon: Cpu, items: ['Arduino Uno/Mega', 'ESP32', 'ESP8266', 'STM32 Nucleo'] },
@@ -12,6 +13,12 @@ const equipment = [
 ];
 
 export default function IdeaLab() {
+  useSEO({
+    title: 'Idea Lab',
+    description: 'The RAGECAPZ Idea Lab is a dedicated space for students to experiment with microcontrollers, sensors, robotics, and IoT hardware.',
+    path: '/idea-lab',
+  });
+
   return (
     <div className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

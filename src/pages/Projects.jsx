@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Search, Code, Cpu, Wifi } from 'lucide-react';
 import { useState } from 'react';
+import useSEO from '../hooks/useSEO';
 
 const projects = [
   { id: 1, title: 'Smart Home Automation', tech: 'ESP32 + Relay + IoT', category: 'IoT', img: '/smarthomeautomation.png', desc: 'Control home appliances globally via a custom web dashboard.' },
@@ -14,6 +15,12 @@ const projects = [
 const categories = ['All', 'IoT', 'Robotics', 'Sensors', 'Embedded'];
 
 export default function Projects() {
+  useSEO({
+    title: 'Student Projects',
+    description: 'Explore innovative hardware and software solutions built by RAGECAPZ students, including IoT, Robotics, and Embedded Systems.',
+    path: '/projects',
+  });
+
   const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects = activeCategory === 'All' 

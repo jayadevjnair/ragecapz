@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { School, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const offerings = [
   "Electronics & Microcontroller Training",
@@ -12,6 +13,12 @@ const offerings = [
 ];
 
 export default function SchoolPrograms() {
+  useSEO({
+    title: 'School Programs',
+    description: 'Bring electronics into your school. RAGECAPZ provides practical electronics and technology education directly to students.',
+    path: '/school-programs',
+  });
+
   return (
     <div className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">

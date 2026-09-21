@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, GraduationCap, School } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 export default function Contact() {
+  useSEO({
+    title: 'Contact Us',
+    description: 'Get in touch with RAGECAPZ for student programs, school partnerships, and idea lab access.',
+    path: '/contact',
+  });
+
   return (
     <div className="py-24 bg-background relative overflow-hidden">
       {/* Decorative background */}
