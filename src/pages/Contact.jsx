@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Send, MapPin, Phone, Mail, GraduationCap, School } from 'lucide-react';
+import { useState } from 'react';
 import useSEO from '../hooks/useSEO';
 
 export default function Contact() {
@@ -8,6 +9,42 @@ export default function Contact() {
     description: 'Get in touch with RAGECAPZ for student programs, school partnerships, and idea lab access.',
     path: '/contact',
   });
+
+  const [status, setStatus] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus(null);
+
+    const formData = new FormData(e.target);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: json
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        setStatus({ type: 'success', message: 'Message sent successfully! We will get back to you soon.' });
+        e.target.reset();
+      } else {
+        setStatus({ type: 'error', message: result.message || 'Failed to send message. Please try again.' });
+      }
+    } catch (error) {
+      setStatus({ type: 'error', message: 'Network error. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="py-24 bg-background relative overflow-hidden">
@@ -127,10 +164,16 @@ export default function Contact() {
           >
             <h3 className="text-2xl font-display font-bold text-white mb-8">Send an Enquiry</h3>
             
-            <form action="https://api.web3forms.com/submit" method="POST" className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <input type="hidden" name="access_key" value="9b38839c-a949-4b1b-859d-5669abb86554" />
               <input type="hidden" name="subject" value="New Enquiry from RAGECAPZ Website" />
               <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
+
+              {status && (
+                <div className={`p-4 rounded-lg mb-6 ${status.type === 'success' ? 'bg-green-500/20 text-green-300 border border-green-500/30' : 'bg-red-500/20 text-red-300 border border-red-500/30'}`}>
+                  {status.message}
+                </div>
+              )}
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -184,9 +227,9 @@ export default function Contact() {
                 <textarea name="message" required rows="4" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary transition-colors resize-none" placeholder="How can we help you?"></textarea>
               </div>
               
-              <button type="submit" className="btn-primary w-full group flex items-center justify-center py-4">
-                Send Enquiry
-                <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              <button type="submit" disabled={isSubmitting} className="btn-primary w-full group flex items-center justify-center py-4 disabled:opacity-70 disabled:cursor-not-allowed">
+                {isSubmitting ? 'Sending...' : 'Send Enquiry'}
+                {!isSubmitting && <Send className="w-5 h-5 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />}
               </button>
             </form>
           </motion.div>
