@@ -14,9 +14,11 @@ export default function Hero() {
           style={{ mixBlendMode: 'lighten' }}
           fetchpriority="high"
         />
-        {/* Lighter gradient overlays to ensure text readability without being too moody */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/40 to-transparent z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
+        {/* Responsive gradient overlays to ensure text readability */}
+        {/* On mobile, we use a darker base overlay to separate text from the busy image */}
+        <div className="absolute inset-0 bg-black/60 md:bg-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/80 md:via-black/40 to-black/40 md:to-transparent z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 md:via-transparent to-transparent z-10"></div>
       </div>
 
       {/* Background glow effects */}
@@ -47,7 +49,7 @@ export default function Hero() {
               <span className="text-gradient">ELECTRONIC REALITY.</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-400 mb-10 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
               Explore electronics, microcontrollers, sensors, robotics and IoT through hands-on learning, innovation labs, internships and real-world projects.
             </p>
             
