@@ -10,7 +10,7 @@ export default function Hero() {
         <img 
           src="/hero-bg.webp" 
           alt="Electronic Reality Concept" 
-          className="w-full h-full object-cover opacity-100"
+          className="hidden md:block w-full h-full object-cover opacity-100"
           style={{ mixBlendMode: 'lighten' }}
           fetchpriority="high"
         />
