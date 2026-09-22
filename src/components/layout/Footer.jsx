@@ -1,5 +1,19 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, MapPin, Phone, Facebook } from 'lucide-react';
+import { MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
+
+const Instagram = ({ className }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+  </svg>
+);
+
+const Facebook = ({ className }) => (
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+  </svg>
+);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -30,7 +44,7 @@ export default function Footer() {
               <a href="https://www.facebook.com/share/19hpiSkbPq/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="Facebook">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="WhatsApp">
+              <a href="https://wa.me/918592010676?text=Hi!%20I%20would%20like%20to%20connect%20with%20RAGECAPZ." target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-surface flex items-center justify-center text-gray-400 hover:text-primary hover:bg-surface-hover transition-all" title="WhatsApp">
                 <MessageCircle className="w-5 h-5" />
               </a>
             </div>
@@ -75,7 +89,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <MessageCircle className="w-5 h-5 text-primary shrink-0" />
-                <a href="https://wa.me/918592010676" target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">WhatsApp Us</a>
+                <a href="https://wa.me/918592010676?text=Hi!%20I%20would%20like%20to%20connect%20with%20RAGECAPZ." target="_blank" rel="noopener noreferrer" className="text-sm hover:text-primary transition-colors">WhatsApp Us</a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-primary shrink-0" />

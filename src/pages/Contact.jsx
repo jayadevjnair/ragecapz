@@ -19,17 +19,11 @@ export default function Contact() {
     setStatus(null);
 
     const formData = new FormData(e.target);
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
+        body: formData
       });
       const result = await response.json();
       
@@ -165,8 +159,8 @@ export default function Contact() {
             <h3 className="text-2xl font-display font-bold text-white mb-8">Send an Enquiry</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
-              <input type="hidden" name="access_key" value="9b38839c-a949-4b1b-859d-5669abb86554" />
-              <input type="hidden" name="subject" value="New Enquiry from RAGECAPZ Website" />
+              <input type="hidden" name="access_key" defaultValue="9b38839c-a949-4b1b-859d-5669abb86554" />
+              <input type="hidden" name="subject" defaultValue="New Enquiry from RAGECAPZ Website" />
               <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
               {status && (
