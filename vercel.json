@@ -13,14 +13,7 @@
       ]
     }
   ],
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.ragecapz.com" }],
-      "destination": "https://ragecapz.com/$1",
-      "permanent": true
-    }
-  ],
+
   "rewrites": [
     { "source": "/about", "destination": "/index.html" },
     { "source": "/programs", "destination": "/index.html" },
