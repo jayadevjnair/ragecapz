@@ -33,7 +33,7 @@ export default function Associations() {
               transition={{ delay: index * 0.1 }}
               className="w-32 h-32 md:w-40 md:h-40 bg-white/5 rounded-2xl flex items-center justify-center p-4 hover:bg-white/10 transition-colors"
             >
-              <img 
+              <img loading="lazy" 
                 src={logo} 
                 alt={`Association Logo ${index + 1}`} 
                 className="max-w-full max-h-full object-contain transition-transform duration-300 hover:scale-110"

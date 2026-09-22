@@ -84,7 +84,7 @@ export default function Projects() {
             >
               <div className="h-56 relative overflow-hidden">
                 <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
-                <img 
+                <img loading="lazy" 
                   src={project.img} 
                   alt={project.title} 
                   className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
@@ -146,7 +146,7 @@ export default function Projects() {
               </button>
 
               <div className="w-full md:w-1/2 min-h-[300px] md:min-h-full relative flex-shrink-0">
-                <img 
+                <img loading="lazy" 
                   src={selectedProject.img} 
                   alt={selectedProject.title} 
                   className="w-full h-full object-cover"

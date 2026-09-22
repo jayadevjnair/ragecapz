@@ -60,7 +60,7 @@ export default function SchoolPrograms() {
             className="relative"
           >
             <div className="aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden border border-white/10 relative">
-              <img 
+              <img loading="lazy" 
                 src="/ChatGPT Image Sep 4, 2026, 11_15_06 PM.png" 
                 alt="Students learning electronics in school" 
                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"

@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
-              <img 
+              <img loading="lazy" 
                 src="/ChatGPT Image Sep 5, 2026, 12_46_07 AM.png" 
                 alt="RAGECAPZ Logo" 
                 className="w-8 h-8 rounded-lg object-contain bg-white/5" 

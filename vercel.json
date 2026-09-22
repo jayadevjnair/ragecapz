@@ -16,13 +16,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "ragecapz.in" }],
-      "destination": "https://ragecapz.com/$1",
-      "permanent": true
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "www.ragecapz.in" }],
+      "has": [{ "type": "host", "value": "www.ragecapz.com" }],
       "destination": "https://ragecapz.com/$1",
       "permanent": true
     }

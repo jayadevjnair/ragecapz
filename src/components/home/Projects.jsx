@@ -98,7 +98,7 @@ export default function Projects() {
                 {/* Image Placeholder with Gradient or Real Image */}
                 <div className={`h-48 relative flex items-center justify-center overflow-hidden ${!project.img ? `bg-gradient-to-br ${project.bgGradient}` : 'bg-surface'}`}>
                   {project.img ? (
-                    <img 
+                    <img loading="lazy" 
                       src={project.img} 
                       alt={project.title} 
                       className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 

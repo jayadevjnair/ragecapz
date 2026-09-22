@@ -128,7 +128,7 @@ export default function SummerCamps() {
                 transition={{ delay: idx * 0.1 }}
                 className="rounded-2xl overflow-hidden shadow-2xl border border-white/10 group h-64"
               >
-                <img 
+                <img loading="lazy" 
                   src={imgSrc} 
                   alt={`Summer camp activity ${idx + 1}`} 
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700" 

@@ -92,7 +92,7 @@ export default function Gallery() {
                     autoPlay muted loop playsInline
                   />
                 ) : (
-                  <img
+                  <img loading="lazy"
                     src={item.img}
                     alt={item.caption}
                     className="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700 filter grayscale group-hover:grayscale-0"
@@ -146,7 +146,7 @@ export default function Gallery() {
                   controls autoPlay
                 />
               ) : (
-                <img src={selectedImg.img} alt={selectedImg.caption} className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl mb-6" />
+                <img loading="lazy" src={selectedImg.img} alt={selectedImg.caption} className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl mb-6" />
               )}
               <div className="text-center">
                 <span className="text-primary text-sm font-bold uppercase tracking-wider block mb-2">{selectedImg.category}</span>
